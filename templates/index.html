@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Ваше имя
+{% endblock %}
+
+{% block body %}
+
+<form action="greet">
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card px-5 py-5" id="form1">
+                    <div class="form-data" v-if="!submitted">
+                        <div class="forms-inputs mb-4" > <span>Ваше имя</span> <input type = text name="name">
+
+                        </div>
+
+                        <div class="mb-3"> <button v-on:click.stop.prevent="submit" class="btn btn-dark w-100">Приветствовать</button> </div>
+                    </div>
+                    <div class="success-data" v-else>
+                        <div class="text-center d-flex flex-column"> <i class='bx bxs-badge-check'></i> <span class="text-center fs-1">Добро пожаловать!</span> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
